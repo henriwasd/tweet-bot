@@ -9,6 +9,19 @@ const flutterBot = new twit({
   timeout_ms: 60 * 1000,
 });
 
+const is8Hour = () => {
+  const date = new Date();
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+  return hour === 8 && minutes === 0;
+};
+
+const isWeekday = () => {
+  const date = new Date();
+  const day = date.getDay();
+  return day !== 0 && day !== 6;
+};
+
 const getTimeToFridayAt18 = () => {
   const today = new Date();
   const friday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5 - today.getDay());
@@ -19,14 +32,7 @@ const getTimeToFridayAt18 = () => {
   return { days, hours, minutes };
 };
 
-// flutterBot.post('statuses/update', { status: `Bom dia \nDor e Sofrimento \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} para sexta feira às 18hrs` }, (err, data, response) => {
-//   console.log(data);
-// }, (err, data, response) => {
-//   console.log('successfull');
-// }
-// );
-
-setInterval(() => {
+function postTweet() {
   const timeToFriday = getTimeToFridayAt18();
   flutterBot.post('statuses/update', { status: `Bom dia \nDor e Sofrimento \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} minutos para sexta feira às 18hrs` }, (err, data, response) => {
     console.log(data);
@@ -34,7 +40,15 @@ setInterval(() => {
     console.log('successfull');
   }
   );
-}, 1000 * 60 * 60 * 8);
+}
 
-
-
+verifica = is8Hour() && isWeekday();
+while (true) {
+  if (verifica) {
+    postTweet();
+  }
+  verifica = false;
+  if (is8Hour()) {
+    verifica = is8Hour() && isWeekday();
+  }
+}
