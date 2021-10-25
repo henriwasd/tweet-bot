@@ -1,0 +1,25 @@
+{
+  "name": "tweet-bot",
+  "version": "1.0.0",
+  "description": "Bot que faz um tweet todo dia as 8:00 avisando quanto tempo falta para sexta 18:00 horas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriwasd/tweet-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriwasd/tweet-bot/issues"
+  },
+  "homepage": "https://github.com/henriwasd/tweet-bot#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "twit": "^2.2.11"
+  }
+}
