@@ -28,7 +28,7 @@ const getTimeToFridayAt18 = () => {
 
 setInterval(() => {
   const timeToFriday = getTimeToFridayAt18();
-  flutterBot.post('statuses/update', { status: `Bom dia \nDor e Sofrimento \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} para sexta feira às 18hrs` }, (err, data, response) => {
+  flutterBot.post('statuses/update', { status: `Bom dia \nDor e Sofrimento \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} minutos para sexta feira às 18hrs` }, (err, data, response) => {
     console.log(data);
   }, (err, data, response) => {
     console.log('successfull');
