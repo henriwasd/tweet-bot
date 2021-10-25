@@ -4,6 +4,7 @@
   "description": "Bot que faz um tweet todo dia as 8:00 avisando quanto tempo falta para sexta 18:00 horas",
   "main": "index.js",
   "scripts": {
+    "start": "npm install && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
