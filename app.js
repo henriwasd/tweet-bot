@@ -1,8 +1,5 @@
-const express = require('express');
 const twit = require('twit');
-require('dotenv/config');
-
-const app = express();
+require("dotenv").config();
 
 const flutterBot = new twit({
   consumer_key: process.env.TWITTER_API_KEY,
@@ -38,11 +35,6 @@ setInterval(() => {
   }
   );
 }, 1000 * 60 * 60 * 8);
-
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
-}
-);
 
 
 
