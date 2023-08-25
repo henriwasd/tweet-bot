@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/henriwasd/tweet-bot#readme",
   "dependencies": {
+    "cron": "^2.4.1",
     "dotenv": "^10.0.0",
     "twitter-api-v2": "^1.15.1"
   }
