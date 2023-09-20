@@ -39,4 +39,4 @@ async function postTweet() {
   console.log('Tweet posted!');
 }
 
-new CronJob('0 8 * * *', postTweet, null, true, 'America/Sao_Paulo');
+new CronJob('0 8 * * 1-5', postTweet, null, true, 'America/Sao_Paulo');
