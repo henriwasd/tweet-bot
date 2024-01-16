@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: '3'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    restart: always
