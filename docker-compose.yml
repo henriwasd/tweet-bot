@@ -1,7 +1,7 @@
 # docker-compose.yml
 version: '3'
 services:
-  app:
+  tweetbot:
     build: .
     volumes:
       - .:/usr/src/app

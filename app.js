@@ -1,5 +1,5 @@
-const { TwitterApi } = require('twitter-api-v2')
-var CronJob = require('cron').CronJob
+import { TwitterApi } from 'twitter-api-v2'
+import { CronJob } from 'cron'
 require("dotenv").config()
 
 const twitBot = new TwitterApi({
@@ -35,7 +35,7 @@ function convertTime(time) {
 
 async function postTweet() {
   const timeToFriday = convertTime(getTimeToFridayAt18())
-  const bomDiaDorSofrimento = `Bom dia \nDor e Sofrimento \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} minutos para sexta feira às 18 horas`
+  const bomDiaDorSofrimento = `Bom dia \nFaltam ${timeToFriday.days} dias ${timeToFriday.hours} horas e ${timeToFriday.minutes} minutos para sexta feira às 18 horas`
   await twitBot.v2.tweet(bomDiaDorSofrimento)
   console.log('Tweet posted!')
   console.log(bomDiaDorSofrimento)
